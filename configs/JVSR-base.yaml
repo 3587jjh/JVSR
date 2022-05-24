@@ -1,0 +1,16 @@
+model: JVSR_base
+scale: 4
+
+dataset:
+  name: REDS
+  path: /workspace/datasets/REDS
+  N: 2 # temporal_radius
+  batch_size: 32
+  GT_size: 256 # LR_size = GT_size // scale
+
+train:
+  beta1: 0.9
+  beta2: 0.99
+  niter: 320000 # niter = batch_size * num_epochs
+
+
