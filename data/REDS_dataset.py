@@ -12,7 +12,7 @@ class REDSDataset(Dataset):
     def __init__(self, opt):
         super(REDSDataset, self).__init__()
         self.path = opt['dataset']['path']
-        self.N = opt['dataset']['N']
+        self.N = opt['N']
         self.GT_size = opt['dataset']['GT_size']
         self.LR_size = opt['dataset']['LR_size']
         self.scale = opt['dataset']['GT_size'] // opt['dataset']['LR_size']

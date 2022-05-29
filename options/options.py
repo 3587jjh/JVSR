@@ -12,6 +12,5 @@ def parse(config_path, mode):
     opt['dataset']['path'] = os.path.join(opt['dataset']['path'], mode)
     assert opt['dataset']['GT_size'] % opt['scale'] == 0
     opt['dataset']['LR_size'] = opt['dataset']['GT_size'] // opt['scale']
-    opt['train']['num_epochs'] = opt['train']['niter'] // opt['dataset']['batch_size']
     return opt
     
