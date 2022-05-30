@@ -1,3 +1,4 @@
+import os
 import argparse
 import options.options as options
 from data import create_dataloader
@@ -45,10 +46,13 @@ def main():
             optimizer.step()
 
             cur_iter += 1
-            if cur_iter % 1 == 0:
+            if cur_iter % 10 == 0:
                 losses.append(loss.item())
                 print('Total loss: {:.4f} || MSE loss: {:.4f} || iter: [{}/{}]'\
                     .format(loss.item(), loss.item(), cur_iter, total_iter))
+
+    if not os.path.exists('./results'):
+        os.makedirs('./results')
 
     torch.save(model, './results/model.pt')
     plt.plot(losses)

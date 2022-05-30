@@ -12,7 +12,7 @@ train:
   beta1: 0.9
   beta2: 0.99
   lr: 0.0002
-  num_epochs: 1
+  num_epochs: 30
 
 arch:
   alignment:
